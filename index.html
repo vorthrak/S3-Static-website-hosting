@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Interactive Website</title>
+    <style>
+        /* Styling untuk membuat halaman lebih menarik */
+        body {
+            font-family: 'Arial', sans-serif;
+            margin: 0;
+            padding: 0;
+            background: linear-gradient(45deg, #ff9a9e, #fad0c4);
+            color: #333;
+        }
+
+        header {
+            background: #ff6b6b;
+            color: white;
+            padding: 20px 10px;
+            text-align: center;
+            font-size: 2rem;
+        }
+
+        main {
+            padding: 20px;
+        }
+
+        h1 {
+            color: #222;
+            text-align: center;
+        }
+
+        .content {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            margin-top: 20px;
+        }
+
+        .card {
+            background: white;
+            border-radius: 10px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            margin: 10px;
+            padding: 20px;
+            width: 250px;
+            text-align: center;
+            transition: transform 0.3s;
+        }
+
+        .card:hover {
+            transform: translateY(-10px);
+        }
+
+        button {
+            background: #ff6b6b;
+            border: none;
+            color: white;
+            padding: 10px 20px;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 1rem;
+            margin-top: 10px;
+        }
+
+        button:hover {
+            background: #ff3b3b;
+        }
+
+        footer {
+            background: #333;
+            color: white;
+            text-align: center;
+            padding: 10px;
+            position: fixed;
+            bottom: 0;
+            width: 100%;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        My Interactive Website
+    </header>
+    <main>
+        <h1>Welcome to My Website!</h1>
+        <p>Explore the interactive features below:</p>
+        <div class="content">
+            <div class="card">
+                <h2>Random Quote</h2>
+                <p id="quote">Click the button to get a quote!</p>
+                <button onclick="generateQuote()">Get Quote</button>
+            </div>
+            <div class="card">
+                <h2>Change Background</h2>
+                <p>Customize the page background color.</p>
+                <button onclick="changeBackground()">Change Color</button>
+            </div>
+            <div class="card">
+                <h2>Time & Date</h2>
+                <p id="datetime">Click the button to view current time!</p>
+                <button onclick="showDateTime()">Show Time</button>
+            </div>
+        </div>
+    </main>
+    <footer>
+        &copy; 2024 My Interactive Website. All rights reserved.
+    </footer>
+    <script>
+        // Array berisi beberapa quote untuk di-random
+        const quotes = [
+            "The best way to predict the future is to invent it.",
+            "Success is not the key to happiness. Happiness is the key to success.",
+            "Life is 10% what happens to us and 90% how we react to it.",
+            "Your time is limited, so don’t waste it living someone else’s life.",
+            "Stay hungry, stay foolish."
+        ];
+
+        // Fungsi untuk menghasilkan quote random
+        function generateQuote() {
+            const randomIndex = Math.floor(Math.random() * quotes.length);
+            document.getElementById('quote').innerText = quotes[randomIndex];
+        }
+
+        // Fungsi untuk mengubah warna latar belakang secara acak
+        function changeBackground() {
+            const colors = ['#ffadad', '#ffd6a5', '#fdffb6', '#caffbf', '#9bf6ff', '#a0c4ff', '#bdb2ff', '#ffc6ff'];
+            const randomColor = colors[Math.floor(Math.random() * colors.length)];
+            document.body.style.background = randomColor;
+        }
+
+        // Fungsi untuk menampilkan waktu dan tanggal saat ini
+        function showDateTime() {
+            const now = new Date();
+            document.getElementById('datetime').innerText = now.toLocaleString();
+        }
+    </script>
+</body>
+</html>
