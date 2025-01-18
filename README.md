@@ -2,9 +2,12 @@
 - ```create bucket```
 - ```clear box block all public access```
 - ```upload file index.html```
-# Properties
+---
+## Properties
 - ```Static website hosting```
 - ```enable```
 - ```enter a file name index.html```
-# permissions
+---
+## permissions
 - ```create bucket policy```
+---
